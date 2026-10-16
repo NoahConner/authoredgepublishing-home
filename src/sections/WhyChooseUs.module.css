@@ -1,0 +1,149 @@
+/* Values copied from the original theme's custom CSS for this row (#r2) */
+.why {
+  padding: 90px 0;
+}
+
+/* 7/12 collage column + 5/12 text column, vertically centred */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 773fr) minmax(0, 526fr);
+  align-items: center;
+}
+
+/* ---------- Book collage ---------- */
+.collage {
+  padding-right: 30px;
+}
+
+.collageInner {
+  position: relative;
+  transition: rotate 0.9s;
+}
+
+/* Hover: the collage spins 180° and every cover spins back, so covers swap places */
+.collage:hover .collageInner {
+  rotate: 180deg;
+}
+
+.cover {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  transition: rotate 0.9s;
+}
+.collage:hover .cover {
+  rotate: -180deg;
+}
+
+.row {
+  display: flex;
+  margin: -20px 0;
+}
+
+.col5,
+.col7 {
+  padding: 0 12px;
+}
+.col5 {
+  width: 41.6667%;
+}
+.col7 {
+  width: 58.3333%;
+}
+
+/* Large cover, centred on a zero-height anchor that sits after cover 2 */
+.centerAnchor {
+  position: relative;
+  height: 0;
+}
+
+.cover.center {
+  position: absolute;
+  inset: 0;
+  z-index: 99;
+  width: 42%;
+  max-width: none;
+  margin: auto;
+}
+
+/* ---------- Text column ---------- */
+.title {
+  margin-bottom: 20px;
+  font-family: var(--font-script);
+  font-size: 50px;
+  line-height: 60px;
+  color: #000;
+}
+
+.intro {
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.accordion {
+  margin-top: 30px;
+}
+
+/* Answer text is #666 in this section */
+.accordion p {
+  padding-bottom: 40px;
+  color: #666;
+}
+
+@media (max-width: 1280px) {
+  .why {
+    padding: 60px 0 180px;
+  }
+}
+
+@media (max-width: 840px) {
+  .why {
+    padding: 70px 0 150px;
+    text-align: center;
+  }
+  .collage {
+    padding-right: 0;
+  }
+  .col7 {
+    width: 60%;
+  }
+  .col5 {
+    width: 40%;
+  }
+  .accordion {
+    text-align: left;
+  }
+}
+
+@media (max-width: 999px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .collage {
+    max-width: 520px;
+    margin-inline: auto;
+  }
+}
+
+/* Phones: equal columns so the four small covers are the same size */
+@media (max-width: 525px) {
+  .col5,
+  .col7 {
+    width: 50%;
+  }
+  .collageInner > .cover {
+    width: calc(50% - 24px);
+    margin-left: 12px;
+  }
+  .cover.center {
+    width: 55%;
+  }
+}
+
+@media (max-width: 690px) {
+  .title {
+    font-size: 42px;
+    line-height: 52px;
+  }
+}

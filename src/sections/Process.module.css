@@ -1,0 +1,58 @@
+.process {
+  padding: 114px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 27px;
+  margin-top: 24px;
+}
+
+.steps li::marker {
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 16px;
+}
+
+.steps h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 37px;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 415 / 300;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+/* Title, intro and steps are pure black on the original */
+.process h2,
+.process header p,
+.steps h3 {
+  color: #000;
+}
+
+@media (max-width: 999px) {
+  .process {
+    padding: 80px 0;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 525px) {
+  .image {
+    height: 300px;
+    aspect-ratio: auto;
+  }
+  .steps h3 {
+    font-size: 19px;
+    line-height: 32px;
+  }
+}

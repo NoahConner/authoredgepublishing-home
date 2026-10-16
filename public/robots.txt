@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://authoredgepublishing.co.uk/sitemap.xml

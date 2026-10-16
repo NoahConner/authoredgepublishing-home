@@ -1,0 +1,121 @@
+.footer {
+  background: #000;
+  color: var(--footer-text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  padding-block: 75px 107px;
+}
+
+.logo img {
+  width: 205px;
+}
+
+.contact {
+  display: grid;
+  gap: 8px;
+  margin-top: 39px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 25px;
+  font-style: normal;
+}
+
+.contact a,
+.contact span {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  text-decoration: none;
+}
+.contact a:hover {
+  color: var(--white);
+}
+
+.contact svg {
+  flex-shrink: 0;
+  color: var(--footer-text);
+}
+
+.social {
+  display: flex;
+  gap: 16px;
+  margin: 38px 0 0;
+  padding: 0 0 0 9px;
+  list-style: none;
+}
+
+.social a {
+  display: block;
+  color: var(--footer-text);
+  transition: color 0.2s ease;
+}
+.social a:hover {
+  color: var(--white);
+}
+
+.trustpilot {
+  display: inline-block;
+  margin-top: 26px;
+}
+.trustpilot img {
+  width: 147px;
+  /* White logo on the black footer, as on the live site */
+  filter: brightness(0) invert(1);
+}
+
+.note {
+  margin-top: 53px;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.heading {
+  margin-bottom: 4px;
+  font-size: 24px;
+  line-height: 34px;
+  color: var(--white);
+}
+
+/* The gold form box extends slightly past the column, like the original */
+.grid form {
+  margin-inline: -30px;
+}
+
+.bottom {
+  padding-block: 20px;
+}
+.bottom p {
+  font-size: 15px;
+  line-height: 25px;
+  color: var(--white);
+}
+
+@media (max-width: 999px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .grid {
+    padding-block: 60px 40px;
+  }
+  .grid form {
+    margin-inline: 0;
+  }
+  /* Keep the copyright clear of the floating WhatsApp button */
+  .bottom {
+    padding-bottom: 84px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact,
+  .note,
+  .bottom p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

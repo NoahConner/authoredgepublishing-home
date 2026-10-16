@@ -1,0 +1,237 @@
+/* ---------- Fonts (same families as the live WordPress theme) ---------- */
+/* reg / med = GT Walsheim Pro, crg = Coolvetica, ss = Shunshine, + Open Sans */
+@font-face {
+  font-family: 'GT Walsheim';
+  src: url('../assets/fonts/gt-walsheim-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GT Walsheim Medium';
+  src: url('../assets/fonts/gt-walsheim-medium.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('../assets/fonts/coolvetica.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Shunshine';
+  src: url('../assets/fonts/shunshine.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/open-sans-latin.woff2') format('woff2');
+  font-weight: 300 800;
+  font-display: swap;
+}
+
+/* ---------- Design tokens (measured from the live site) ---------- */
+:root {
+  --gold: #ffb800;
+  --gold-deep: #edab02;
+  --brown: #482c1e;
+  --brown-dark: #2c2420;
+  --heading: #444;
+  --text: #676767;
+  --white: #fff;
+  --footer-text: #b3b3b3;
+  --divider: #d6dde6;
+
+  --grad-gold: linear-gradient(162deg, #ffb800 0%, #2c2420 99%);
+
+  --font-display: 'Coolvetica', 'Arial Black', Arial, sans-serif;
+  --font-script: 'Shunshine', 'Brush Script MT', cursive;
+  --font-body: 'GT Walsheim', 'Helvetica Neue', Arial, sans-serif;
+  --font-medium: 'GT Walsheim Medium', 'GT Walsheim', Arial, sans-serif;
+  --font-ui: 'Open Sans', Helvetica, sans-serif;
+
+  --container: 1440px;
+  --gutter: 70px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 7px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--heading);
+  text-transform: capitalize;
+}
+
+p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 30px;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 30px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* ---------- Utilities ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Section titles are 60px / 70px Coolvetica on desktop */
+.section-title {
+  font-size: 60px;
+  line-height: 70px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: var(--gold);
+  color: #000;
+  border-radius: 8px;
+}
+.skip-link:focus {
+  top: 16px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ---------- Responsive type scale (copied from the original theme's breakpoints) ---------- */
+/* .section-title = every heading the original renders as <h1> (hero, section titles, CTA titles) */
+@media (max-width: 1366px) {
+  .section-title {
+    font-size: 45px;
+    line-height: 55px;
+  }
+}
+
+@media (max-width: 1300px) {
+  :root {
+    --gutter: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+  p {
+    font-size: 12px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 999px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+
+@media (max-width: 840px) {
+  p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+  /* Manual line breaks are only for wide screens */
+  p br {
+    display: none;
+  }
+}
+
+@media (max-width: 525px) {
+  :root {
+    --gutter: 20px;
+  }
+  .section-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .section-title br {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .section-title {
+    font-size: 34px;
+    line-height: 45px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

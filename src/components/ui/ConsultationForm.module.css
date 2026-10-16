@@ -1,0 +1,197 @@
+.form {
+  font-family: var(--font-ui);
+}
+
+.title {
+  margin: 0 0 24px;
+  font-family: var(--font-display);
+  font-size: 27px;
+  line-height: 37px;
+  text-transform: capitalize;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 12px;
+}
+
+.stack {
+  display: grid;
+  gap: 14px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.form input,
+.form select,
+.form textarea {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 24px;
+  outline-offset: 0;
+}
+
+.form textarea {
+  height: 192px;
+  resize: vertical;
+}
+
+.submit {
+  display: block;
+  width: 100%;
+  margin-top: 29px;
+  padding: 15px 22px;
+  border: 0;
+  border-radius: 4px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.submit:hover {
+  opacity: 0.85;
+}
+.submit:disabled {
+  cursor: wait;
+}
+
+.success,
+.error {
+  margin: 12px 0 0;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* ---------- Hero: translucent black card ---------- */
+.dark {
+  padding: 20px 30px 44px;
+  border-radius: 45px;
+  background: rgb(0 0 0 / 0.6);
+  color: var(--white);
+}
+.dark .title {
+  color: var(--white);
+}
+.dark input,
+.dark select,
+.dark textarea {
+  background: rgb(255 255 255 / 0.1);
+  color: var(--white);
+}
+.dark ::placeholder {
+  color: var(--white);
+  opacity: 1;
+}
+.dark option {
+  color: #000;
+}
+.dark .submit {
+  background: var(--white);
+  color: #000;
+}
+.dark .error {
+  color: #ffc9c0;
+}
+
+/* ---------- Process section: gold card ---------- */
+.gold {
+  padding: 20px 20px 44px;
+  border-radius: 25px;
+  background: var(--gold-deep);
+}
+.gold .title {
+  font-size: 22px;
+  color: var(--heading);
+}
+.gold .grid {
+  gap: 16px 7px;
+}
+.gold input,
+.gold select,
+.gold textarea {
+  border-radius: 50px;
+  background: rgb(255 255 255 / 0.54);
+  color: #555;
+}
+.gold select {
+  color: #000;
+}
+.gold textarea {
+  height: 130px;
+  border-radius: 15px;
+}
+.gold ::placeholder {
+  color: #555;
+}
+.gold .submit {
+  border-radius: 50px;
+  background: var(--brown);
+  color: var(--white);
+}
+
+/* ---------- Footer: compact gold card ---------- */
+.footer {
+  padding: 16px 30px 20px;
+  border-radius: 25px;
+  background: var(--gold-deep);
+}
+.footer .stack {
+  gap: 10px;
+}
+.footer input,
+.footer textarea {
+  padding: 10px 10px 10px 20px;
+  border: 0;
+  border-radius: 50px;
+  background: rgb(255 255 255 / 0.54);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #555;
+}
+.footer textarea {
+  height: 80px;
+  border-radius: 15px;
+  border-bottom: 1px solid #555;
+}
+.footer ::placeholder {
+  color: #555;
+}
+.footer .submit {
+  display: inline-block;
+  width: auto;
+  margin-top: 28px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  background: var(--brown);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+@media (max-width: 690px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .dark {
+    padding: 20px;
+    border-radius: 25px;
+  }
+  .title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}

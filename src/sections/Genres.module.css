@@ -1,0 +1,117 @@
+.genres {
+  padding: 120px 0;
+  color: #000;
+  /* The carousel bleeds to the screen edge; clip it so the page never scrolls sideways */
+  overflow-x: clip;
+}
+
+.title {
+  color: #000;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.intro {
+  color: #000;
+}
+
+.arrows {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+  margin-bottom: -33px;
+}
+
+.arrows button {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 0;
+  border-radius: 50px;
+  background: #ebaa04;
+  color: #2c2420;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.arrows button:hover {
+  transform: scale(1.06);
+}
+
+/* 303px cells (21px padding) with 22px gaps; the carousel bleeds off the
+   right edge of the screen so the next card peeks in, as on the original */
+.track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 303px;
+  gap: 22px;
+  margin: 49px calc(50% - 50vw) 49px 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  padding: 21px;
+  scroll-snap-align: start;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  font-size: 27px;
+  line-height: 37px;
+  color: #000;
+}
+
+.card p {
+  color: #000;
+}
+
+@media (max-width: 999px) {
+  .track {
+    grid-auto-columns: 260px;
+  }
+}
+
+/* Original theme: centred section, arrows above the carousel, 45% images */
+@media (max-width: 840px) {
+  .genres {
+    padding: 70px 0 80px;
+    text-align: center;
+  }
+  .head {
+    flex-direction: column;
+    align-items: center;
+  }
+  .arrows {
+    margin: 10px 0 0;
+  }
+  .track {
+    grid-auto-columns: 100%;
+    gap: 20px;
+    margin: 30px 0 0;
+  }
+  .card {
+    text-align: left;
+  }
+  .card img {
+    width: 45%;
+  }
+}

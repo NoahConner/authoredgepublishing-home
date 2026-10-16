@@ -1,0 +1,54 @@
+.faq {
+  padding: 90px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 26px;
+}
+
+.title {
+  margin-bottom: 31px;
+  text-align: left;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.title {
+  color: #000;
+}
+
+/* Answer text is #666 on the original */
+.grid p {
+  color: #666;
+}
+
+/* Same row rules as "Why Choose Us" (both are #r2 in the original theme) */
+@media (max-width: 1280px) {
+  .faq {
+    padding: 60px 0 180px;
+  }
+}
+
+@media (max-width: 999px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 840px) {
+  .faq {
+    padding: 70px 0 150px;
+  }
+  .title {
+    text-align: center;
+  }
+}

@@ -1,0 +1,71 @@
+.testimonials {
+  padding: 0 0 66px;
+}
+
+.title {
+  color: #000;
+}
+
+/* Three 285px columns spread across the container */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 285px);
+  justify-content: space-between;
+  margin: 99px 0 0;
+  padding: 0 47px;
+  list-style: none;
+}
+
+.card {
+  margin: 0;
+}
+
+.card blockquote {
+  margin: 0;
+}
+
+.card p {
+  padding-bottom: 27px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+.card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 100px;
+  background: var(--brown);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 13px;
+  box-shadow: 0 15px 37px rgb(0 0 0 / 0.15);
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 999px) {
+  .grid {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+}

@@ -1,0 +1,142 @@
+.services {
+  position: relative;
+  isolation: isolate;
+  padding: 100px 0;
+  background-size: cover;
+  background-position: 0 0;
+  color: var(--white);
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgb(0 0 0 / 0.8);
+}
+
+.title,
+.services h3 {
+  color: var(--white);
+}
+
+.intro {
+  color: var(--white);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 20px;
+  margin: 50px 0 56px;
+}
+
+.tab {
+  padding: 8px 28px;
+  border: 0;
+  border-radius: 50px;
+  background: linear-gradient(162deg, #ffb800 0%, #2c2420 90%);
+  color: var(--white);
+  font-family: var(--font-ui);
+  font-size: 18px;
+  line-height: 32px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.tab:hover {
+  transform: translateY(-2px);
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 27px;
+  padding-bottom: 19px;
+  animation: fade 0.4s ease;
+}
+.panel[hidden] {
+  display: none;
+}
+
+.panel h3 {
+  font-size: 37px;
+  line-height: 47px;
+  margin-bottom: 8px;
+}
+
+.panel p {
+  padding-bottom: 27px;
+}
+
+.panel ul {
+  margin-bottom: 27px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  padding-left: 10px;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 636 / 364;
+  object-fit: cover;
+  border-radius: 35px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Original theme: tabs turn solid gold with black text below 1366px */
+@media (max-width: 1366px) {
+  .tab {
+    padding: 8px 25px;
+    background: var(--gold-deep);
+    color: #000;
+  }
+}
+
+@media (max-width: 999px) {
+  .panel {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .panel h3 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+
+@media (max-width: 840px) {
+  .services {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 525px) {
+  .tabs {
+    gap: 0 10px;
+  }
+  .tab {
+    margin: 5px 0;
+    padding: 8px 20px;
+    font-size: 15px;
+  }
+  .panel h3 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+  .ctas {
+    gap: 10px;
+    padding-left: 0;
+  }
+}

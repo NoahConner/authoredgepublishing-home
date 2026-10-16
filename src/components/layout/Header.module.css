@@ -1,0 +1,182 @@
+/* Transparent header sitting on top of the hero (not sticky), as on the live site */
+.header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 100;
+}
+
+.inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 18px;
+}
+
+.logo {
+  margin-top: 10px;
+}
+.logo img {
+  width: 236px;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  min-height: 50px;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a {
+  display: block;
+  padding: 0 14px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 26px;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: opacity 0.2s ease;
+}
+.links a:hover {
+  opacity: 0.75;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+}
+
+/* Header buttons use the regular weight without letter-spacing */
+.headerBtn,
+.phoneBtn {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+}
+
+.phoneBtn {
+  background: linear-gradient(162deg, #ffb800 0%, #2c2420 70%);
+}
+
+.toggle {
+  display: none;
+  margin-top: 22px;
+  padding: 6px;
+  border: 0;
+  background: none;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* ---------- Responsive (breakpoints follow the original theme) ---------- */
+@media (max-width: 1440px) {
+  .logo img {
+    width: 218px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .nav {
+    gap: 24px;
+  }
+  .links {
+    gap: 0;
+  }
+  .links a {
+    padding: 0 10px;
+  }
+  .actions {
+    gap: 10px;
+  }
+}
+
+/* Not enough room for both header buttons on small laptops / tablets */
+@media (max-width: 1200px) and (min-width: 1000px) {
+  .headerBtn {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo img {
+    width: 168px;
+  }
+}
+
+/* Mobile menu */
+@media (max-width: 999px) {
+  .toggle {
+    display: inline-flex;
+  }
+
+  .menuOpen {
+    position: fixed;
+    background: var(--brown-dark);
+  }
+
+  /* Logo and close button stay above the full-screen menu panel */
+  .logo,
+  .toggle {
+    position: relative;
+    z-index: 2;
+  }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+    padding: 130px var(--gutter) 40px;
+    background: var(--brown-dark);
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease, visibility 0.25s;
+  }
+
+  .open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .links a {
+    padding: 14px 0;
+    font-size: 20px;
+    border-bottom: 1px solid rgb(255 255 255 / 0.1);
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 999px) {
+  .toggle {
+    margin-top: 12px;
+  }
+  .nav {
+    padding-top: 110px;
+  }
+}
+
+@media (max-width: 525px) {
+  .logo img {
+    width: 170px;
+  }
+}
