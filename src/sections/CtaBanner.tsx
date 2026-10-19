@@ -8,15 +8,17 @@ type Props = {
   title: string
   text: string
   cta: string
+  /** Where the second button goes (hero form on the homepage, footer form elsewhere) */
+  ctaHref?: string
 }
 
-/** Full-width call-to-action strip, reused between homepage sections. */
-export function CtaBanner({ title, text, cta }: Props) {
+/** Full-width call-to-action strip, reused between sections and pages. */
+export function CtaBanner({ title, text, cta, ctaHref = '#consultation' }: Props) {
   return (
     <section className={styles.banner} style={{ backgroundImage: `url(${openBookBg})` }}>
       <ShapeDivider position="top" />
       <div className={`container ${styles.inner}`}>
-        <div>
+        <div data-animate="fade">
           <h2 className="section-title">{title}</h2>
           <p>{text}</p>
         </div>
@@ -24,7 +26,7 @@ export function CtaBanner({ title, text, cta }: Props) {
           <Button href={site.phone.href} variant="gold">
             {site.phone.display}
           </Button>
-          <Button href="#consultation" variant="gold">
+          <Button href={ctaHref} variant="gold">
             {cta}
           </Button>
         </div>

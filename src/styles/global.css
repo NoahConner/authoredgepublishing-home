@@ -41,7 +41,8 @@
   --footer-text: #b3b3b3;
   --divider: #d6dde6;
 
-  --grad-gold: linear-gradient(162deg, #ffb800 0%, #2c2420 99%);
+  /* Original uses -webkit-linear-gradient(162deg) = standard 288deg: dark on the left, gold on the right */
+  --grad-gold: linear-gradient(288deg, #ffb800 0%, #2c2420 99%);
 
   --font-display: 'Coolvetica', 'Arial Black', Arial, sans-serif;
   --font-script: 'Shunshine', 'Brush Script MT', cursive;
@@ -133,6 +134,17 @@ textarea {
   text-align: center;
 }
 
+/* Long-form copy (About page): black text with Open Sans semibold keyword highlights */
+.rich-text p {
+  padding-bottom: 27px;
+  color: #000;
+}
+.rich-text strong {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: #000;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -221,6 +233,77 @@ textarea {
   .section-title {
     font-size: 34px;
     line-height: 45px;
+  }
+}
+
+/* ---------- Scroll-reveal animations (see src/lib/reveal.ts) ---------- */
+/* Hidden only when JS is running and motion is allowed */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-animate]:not([data-revealed]) {
+    opacity: 0;
+  }
+  .js [data-animate='grow']:not([data-revealed]) {
+    transform: scale(0.75);
+  }
+
+  /* WPBakery fadeIn: text blocks */
+  [data-animate='fade'][data-revealed] {
+    animation: fadeIn 1s ease both;
+  }
+
+  /* WPBakery bounceIn: buttons */
+  [data-animate='bounce'][data-revealed] {
+    animation: bounceIn 0.75s both;
+  }
+
+  /* Salient grow-in: testimonial columns (staggered with --delay) */
+  [data-animate='grow'] {
+    transition:
+      opacity 0.6s cubic-bezier(0.15, 0.84, 0.35, 1.25),
+      transform 0.6s cubic-bezier(0.15, 0.84, 0.35, 1.25);
+    transition-delay: var(--delay, 0ms);
+  }
+}
+
+/* Keyframes from animate.css (used by the original theme) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
   }
 }
 

@@ -3,49 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Lets CSS hide not-yet-animated content only when JS will reveal it
+         (crawlers and no-JS visitors always see everything) -->
+    <script>document.documentElement.classList.add('js')</script>
 
-    <!-- Primary SEO: title ≤ 60 chars, description ≤ 160 chars, main keywords first -->
-    <title>Self Publishing &amp; Book Publishing Services UK | Author Edge</title>
-    <meta
-      name="description"
-      content="UK self publishing company for authors: ghostwriting, editing, cover design, formatting, Amazon KDP publishing &amp; book marketing. Keep 100% rights &amp; royalties."
-    />
-    <meta
-      name="keywords"
-      content="self publishing services UK, book publishing company UK, self publishing company, book publishing services, publish a book UK, ghostwriting services UK, book editing services, proofreading services, book cover design, book formatting services, Amazon KDP publishing, ebook publishing, book marketing services, Author Edge Publishing"
-    />
+    <!-- Page-specific SEO (title, description, keywords, canonical, social titles)
+         is injected here per page by scripts/prerender.mjs from src/data/seo.ts -->
+    <!--app-head-->
+
+    <!-- Shared SEO -->
     <meta name="author" content="Author Edge Publishing" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href="https://authoredgepublishing.co.uk/" />
-    <link rel="alternate" hreflang="en-gb" href="https://authoredgepublishing.co.uk/" />
-    <link rel="alternate" hreflang="x-default" href="https://authoredgepublishing.co.uk/" />
     <meta name="geo.region" content="GB-LND" />
     <meta name="geo.placename" content="London" />
     <meta name="theme-color" content="#2c2420" />
     <meta name="format-detection" content="telephone=yes" />
 
-    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <!-- Open Graph / Twitter (shared parts) -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:site_name" content="Author Edge Publishing" />
-    <meta property="og:title" content="Self Publishing &amp; Book Publishing Services UK | Author Edge Publishing" />
-    <meta
-      property="og:description"
-      content="Professional publishing support for authors across the UK and beyond — from editing and cover design to Amazon KDP publishing. Keep 100% ownership and royalties."
-    />
-    <meta property="og:url" content="https://authoredgepublishing.co.uk/" />
     <meta property="og:image" content="https://authoredgepublishing.co.uk/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Author Edge Publishing — self publishing services for authors in the UK" />
-
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Self Publishing &amp; Book Publishing Services UK | Author Edge Publishing" />
-    <meta
-      name="twitter:description"
-      content="Professional publishing support for authors across the UK and beyond — from editing and cover design to Amazon KDP publishing. Keep 100% ownership and royalties."
-    />
     <meta name="twitter:image" content="https://authoredgepublishing.co.uk/og-image.jpg" />
     <meta name="twitter:image:alt" content="Author Edge Publishing — self publishing services for authors in the UK" />
 

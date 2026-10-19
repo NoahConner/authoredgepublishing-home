@@ -8,7 +8,7 @@ export function Faq() {
     <section id="faq" className={styles.faq} aria-labelledby="faq-title">
       <div className={`container ${styles.grid}`}>
         <div>
-          <h2 id="faq-title" className={`section-title ${styles.title}`}>
+          <h2 id="faq-title" className={`section-title ${styles.title}`} data-animate="fade">
             FAQs
           </h2>
           <Accordion items={faqs.map((f) => ({ title: f.q, body: f.a }))} />

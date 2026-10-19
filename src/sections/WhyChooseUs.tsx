@@ -61,14 +61,16 @@ export function WhyChooseUs() {
         </div>
 
         <div className={styles.text}>
-          <h2 id="why-title" className={styles.title}>
-            Why Choose Us?
-          </h2>
-          <p className={styles.intro}>
-            Author Edge Publishing combines expertise, reliability, and personalised attention. Our self publishing
-            company ensures every author receives professional support to publish their book confidently and
-            efficiently.
-          </p>
+          <div data-animate="fade">
+            <h2 id="why-title" className={styles.title}>
+              Why Choose Us?
+            </h2>
+            <p className={styles.intro}>
+              Author Edge Publishing combines expertise, reliability, and personalised attention. Our self publishing
+              company ensures every author receives professional support to publish their book confidently and
+              efficiently.
+            </p>
+          </div>
           <div className={styles.accordion}>
             <Accordion items={reasons} />
           </div>

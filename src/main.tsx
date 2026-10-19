@@ -2,18 +2,26 @@ import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import './styles/global.css'
 import App from './App.tsx'
+import { matchRoute } from './routes'
+import { initReveal } from './lib/reveal'
 
+const path = window.location.pathname
 const container = document.getElementById('root')!
 const app = (
   <StrictMode>
-    <App />
+    <App path={path} />
   </StrictMode>
 )
 
-// In production the HTML is prerendered at build time (scripts/prerender.mjs),
+// In production every page is prerendered at build time (scripts/prerender.mjs),
 // so React hydrates it. In dev the root is empty and we render normally.
 if (container.hasChildNodes()) {
   hydrateRoot(container, app)
 } else {
+  // Dev only: the prerender step normally writes the <title>
+  document.title = matchRoute(path).seo.title
   createRoot(container).render(app)
 }
+
+// Start scroll-reveal animations once React has put the page on screen
+requestAnimationFrame(initReveal)

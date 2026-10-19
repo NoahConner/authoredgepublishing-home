@@ -21,7 +21,9 @@ export function Accordion({ items, headingLevel: Heading = 'h3' }: Props) {
             <Heading className={styles.title}>{item.title}</Heading>
             <span className={styles.icon} aria-hidden="true" />
           </summary>
-          <p className={styles.body}>{item.body}</p>
+          <p className={styles.body} data-animate="fade">
+            {item.body}
+          </p>
         </details>
       ))}
     </div>

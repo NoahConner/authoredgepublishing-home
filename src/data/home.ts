@@ -247,13 +247,16 @@ export const testimonials = [
   {
     quote: 'Author Edge Publishing made the process of publishing my book simple and stress free. I’m thrilled with my first published book!',
     name: 'Emily J',
+    fullName: 'Emily Johnson',
   },
   {
     quote: 'Excellent book publishing services! The team guided me step by step through self publishing successfully. Highly recommended.',
     name: 'Michael S',
+    fullName: 'Michael Smith',
   },
   {
     quote: 'Fantastic support and advice. Thanks to Author Edge’s self publishing services, I finally saw my novel professionally published.',
     name: 'Olivia B',
+    fullName: 'Olivia Brown',
   },
 ]

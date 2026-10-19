@@ -43,27 +43,27 @@
   transform: scale(1.06);
 }
 
-/* 303px cells (21px padding) with 22px gaps; the carousel bleeds off the
-   right edge of the screen so the next card peeks in, as on the original */
+/* Carousel window: starts at the container's left edge and bleeds off the right
+   edge of the screen so the next card peeks in, as on the original */
+.viewport {
+  margin: 49px calc(50% - 50vw) 55px 0;
+  overflow: hidden;
+}
+
+/* 303px cells (21px padding) with 22px gaps; slid by useLoopCarousel */
 .track {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 303px;
+  display: flex;
   gap: 22px;
-  margin: 49px calc(50% - 50vw) 49px 0;
+  margin: 0;
   padding: 0;
   list-style: none;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-.track::-webkit-scrollbar {
-  display: none;
+  will-change: transform;
 }
 
 .card {
-  padding: 21px;
-  scroll-snap-align: start;
+  flex: 0 0 303px;
+  /* 20px sides (original 21px): the extra 2px keeps "Drama" on three lines like the live site */
+  padding: 21px 20px;
 }
 
 .card img {
@@ -85,8 +85,8 @@
 }
 
 @media (max-width: 999px) {
-  .track {
-    grid-auto-columns: 260px;
+  .card {
+    flex-basis: 260px;
   }
 }
 
@@ -103,12 +103,14 @@
   .arrows {
     margin: 10px 0 0;
   }
-  .track {
-    grid-auto-columns: 100%;
-    gap: 20px;
+  .viewport {
     margin: 30px 0 0;
   }
+  .track {
+    gap: 20px;
+  }
   .card {
+    flex-basis: 100%;
     text-align: left;
   }
   .card img {

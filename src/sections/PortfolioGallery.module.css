@@ -1,0 +1,85 @@
+.gallery {
+  padding: 100px 0;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 20px;
+  /* 50px above; 50px below plus the 6px the original tab list adds under the pills */
+  margin: 50px 0 56px;
+}
+
+/* Same pill tabs as the "What We Do" section (shares its responsive rules) */
+.tab {
+  composes: tab from './Services.module.css';
+}
+
+/* Three 415px columns: 27px column gap, 24px row gap */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 27px;
+  margin: 0 0 29px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  animation: fade 0.4s ease;
+}
+.grid[hidden] {
+  display: none;
+}
+
+.book img {
+  width: 100%;
+  aspect-ratio: 415 / 512;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 35px;
+}
+
+.book h3 {
+  margin-bottom: 8px;
+  font-size: 22px;
+  line-height: 32px;
+  color: #000;
+}
+
+.book p {
+  color: #000;
+}
+
+.book strong {
+  font-family: var(--font-ui);
+  font-weight: 600;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 999px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 840px) {
+  .gallery {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 525px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin-inline: auto;
+  }
+  .book img {
+    border-radius: 25px;
+  }
+}

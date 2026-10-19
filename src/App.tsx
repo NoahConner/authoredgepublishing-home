@@ -1,5 +1,8 @@
-import { Home } from './pages/Home'
+import { matchRoute } from './routes'
 
-export default function App() {
-  return <Home />
+type Props = { path: string }
+
+export default function App({ path }: Props) {
+  const { Page } = matchRoute(path)
+  return <Page />
 }

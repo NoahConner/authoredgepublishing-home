@@ -4,24 +4,31 @@
   padding: 100px 0;
   background-size: cover;
   background-position: 0 0;
-  color: var(--white);
 }
 
-.services::before {
+/* Dark: photo background with an 80% black overlay (homepage) */
+.dark {
+  color: var(--white);
+}
+.dark::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: -1;
   background: rgb(0 0 0 / 0.8);
 }
-
-.title,
-.services h3 {
+.dark .title,
+.dark h3,
+.dark .intro {
   color: var(--white);
 }
 
-.intro {
-  color: var(--white);
+/* Light: white background, black text (Services page) */
+.light,
+.light .title,
+.light h3,
+.light .intro {
+  color: #000;
 }
 
 .tabs {
@@ -36,7 +43,7 @@
   padding: 8px 28px;
   border: 0;
   border-radius: 50px;
-  background: linear-gradient(162deg, #ffb800 0%, #2c2420 90%);
+  background: linear-gradient(288deg, #ffb800 0%, #2c2420 90%);
   color: var(--white);
   font-family: var(--font-ui);
   font-size: 18px;

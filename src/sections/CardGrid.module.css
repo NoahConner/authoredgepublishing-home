@@ -1,0 +1,98 @@
+.section {
+  position: relative;
+  padding: 100px 0;
+}
+
+.dark {
+  background: rgb(32 27 25 / 0.95);
+  color: var(--white);
+}
+.dark .title {
+  color: var(--white);
+}
+
+.light,
+.light .title {
+  color: #000;
+}
+
+/* Small Coolvetica line above the title ("Got A Story?", "How IT Works") */
+.eyebrow {
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 32px;
+}
+
+/* Three 415px cards per row: 27px column gap, 24px row gap; heights follow content */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 24px 27px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 37px;
+  border-radius: 15px;
+  background: linear-gradient(180deg, #ffb801 0%, #ffe300 100%);
+  color: #000;
+}
+
+.card img {
+  margin: 0 auto 15px;
+}
+
+.number {
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--font-display);
+  font-size: 60px;
+  line-height: 70px;
+}
+
+.card h3 {
+  margin-bottom: 7px;
+  font-family: var(--font-script);
+  font-size: 35px;
+  line-height: 45px;
+  color: #000;
+}
+
+.card p {
+  color: #000;
+}
+
+@media (max-width: 1100px) {
+  .card {
+    padding: 30px 22px;
+  }
+  .card h3 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 999px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 840px) {
+  .section {
+    padding: 90px 0;
+  }
+  .light {
+    padding: 70px 0;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 30px auto 0;
+    gap: 20px;
+  }
+}

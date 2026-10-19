@@ -1,0 +1,51 @@
+.section {
+  padding: 60px 0;
+}
+
+/* Two 637px columns at desktop; the image is centred in its column */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 26px;
+}
+
+.imageLeft .text {
+  order: 2;
+}
+
+.title {
+  color: #000;
+}
+
+.scriptTitle {
+  font-family: var(--font-script);
+  font-size: 35px;
+  line-height: 45px;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin: 7px 0 10px;
+  padding-left: 10px;
+}
+
+.image {
+  width: 100%;
+  margin-inline: auto;
+}
+
+@media (max-width: 999px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 525px) {
+  .ctas {
+    padding-left: 0;
+  }
+}

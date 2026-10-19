@@ -50,10 +50,16 @@ export function Header({ currentPath = '/' }: Props) {
           </ul>
 
           <div className={styles.actions}>
-            <Button href={site.phone.href} className={styles.phoneBtn}>
+            <Button href={site.phone.href} className={styles.phoneBtn} animate={false}>
               {site.phone.display}
             </Button>
-            <Button href="#consultation" variant="brown" className={styles.headerBtn} onClick={closeMenu}>
+            <Button
+              href={currentPath === '/' ? '#consultation' : '#contact'}
+              variant="brown"
+              animate={false}
+              className={styles.headerBtn}
+              onClick={closeMenu}
+            >
               Get Started
             </Button>
           </div>

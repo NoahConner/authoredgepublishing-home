@@ -13,14 +13,20 @@ type Variant = 'grad' | 'dark' | 'brown' | 'gold' | 'light'
 
 type Props = ComponentPropsWithoutRef<'a'> & {
   variant?: Variant
+  /** Bounce in when scrolled into view, like the original theme (off for header buttons) */
+  animate?: boolean
 }
 
 /** Pill-shaped link button with the trailing arrow used across the site. */
-export function Button({ variant = 'grad', className, children, ...rest }: Props) {
+export function Button({ variant = 'grad', animate = true, className, children, ...rest }: Props) {
   return (
-    <a className={[styles.btn, styles[variant], className].filter(Boolean).join(' ')} {...rest}>
+    <a
+      className={[styles.btn, styles[variant], className].filter(Boolean).join(' ')}
+      data-animate={animate ? 'bounce' : undefined}
+      {...rest}
+    >
       <span>{children}</span>
-      <Icon name="arrow" size={18} className={styles.arrow} />
+      <Icon name="longArrow" size={20} className={styles.arrow} />
     </a>
   )
 }

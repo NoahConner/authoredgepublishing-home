@@ -47,7 +47,7 @@ export function Footer() {
           <p className={styles.note}>You keep 100% ownership of your book and 100% of your royalties.</p>
         </div>
 
-        <div>
+        <div id="contact" className={styles.contactCol}>
           <h2 className={styles.heading}>Contact Us</h2>
           <ConsultationForm variant="footer" source="footer" />
         </div>

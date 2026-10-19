@@ -2,55 +2,48 @@
   padding: 50px 0 120px;
 }
 
+.compact {
+  padding: 30px 0;
+}
+
 .title {
   color: #000;
   margin: 0;
 }
 
-.marquee {
-  display: flex;
-  overflow: hidden;
+/* 5 logos visible on desktop (260px each), 3 on tablets, 2 on phones — as on the original */
+.viewport {
+  --visible: 5;
   margin-top: 89px;
+  overflow: hidden;
 }
 
 .track {
   display: flex;
-  flex-shrink: 0;
-  gap: 75px;
   margin: 0;
-  padding: 0 37.5px;
+  padding: 0;
   list-style: none;
-  animation: scroll 30s linear infinite;
-}
-
-.marquee:hover .track {
-  animation-play-state: paused;
+  will-change: transform;
 }
 
 .track li {
-  display: grid;
-  place-items: center;
-  width: 185px;
+  flex: 0 0 calc(100% / var(--visible));
+  display: flex;
+  align-items: center;
   height: 100px;
 }
 
+/* 185 × 100 logo box, left-aligned in its cell */
 .track img {
   width: auto;
-  max-width: 100%;
+  max-width: min(185px, 100%);
   max-height: 100%;
   object-fit: contain;
 }
 
-/* No motion: show the logos as a static, wrapping row instead */
-@media (prefers-reduced-motion: reduce) {
-  .track {
-    flex-wrap: wrap;
-    flex-shrink: 1;
-    justify-content: center;
-    gap: 30px 50px;
-  }
-  .track[aria-hidden] {
-    display: none;
+@media (max-width: 999px) {
+  .viewport {
+    --visible: 3;
   }
 }
 
@@ -58,19 +51,23 @@
   .platforms {
     padding: 50px 0 80px;
   }
-  .marquee {
+  .viewport {
     margin-top: 40px;
   }
 }
 
-@media (max-width: 525px) {
-  .track {
-    gap: 30px;
-    padding: 0 15px;
+@media (max-width: 690px) {
+  .viewport {
+    --visible: 2;
   }
+}
+
+@media (max-width: 525px) {
   .track li {
-    width: 135px;
     height: 90px;
+  }
+  .track img {
+    max-width: min(135px, 100%);
   }
 }
 
@@ -78,13 +75,7 @@
   .platforms {
     padding-bottom: 40px;
   }
-  .track li {
-    width: 105px;
-  }
-}
-
-@keyframes scroll {
-  to {
-    transform: translateX(-100%);
+  .track img {
+    max-width: min(105px, 100%);
   }
 }

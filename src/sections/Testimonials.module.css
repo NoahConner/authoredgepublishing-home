@@ -2,6 +2,10 @@
   padding: 0 0 66px;
 }
 
+.padded {
+  padding: 60px 0 70px;
+}
+
 .title {
   color: #000;
 }

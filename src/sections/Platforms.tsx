@@ -1,32 +1,37 @@
 import { platforms } from '../data/home'
+import { useLoopCarousel } from '../lib/useLoopCarousel'
 import styles from './Platforms.module.css'
 
-export function Platforms() {
-  return (
-    <section className={styles.platforms} aria-labelledby="platforms-title">
-      <div className="container text-center">
-        <h2 id="platforms-title" className={`section-title ${styles.title}`}>
-          Get Your Book Published Across Leading Platforms
-        </h2>
-      </div>
+type Props = {
+  title?: string
+  /** Tighter padding (30px top/bottom), used on the About page */
+  compact?: boolean
+}
 
-      {/* Logos scroll continuously; the second copy is only for the seamless loop */}
-      <div className={styles.marquee}>
-        {[false, true].map((duplicate) => (
-          <ul key={String(duplicate)} className={styles.track} aria-hidden={duplicate || undefined}>
-            {platforms.map((p) => (
-              <li key={p.name}>
-                <img
-                  src={p.src}
-                  alt={duplicate ? '' : p.name}
-                  width={p.width}
-                  height={p.height}
-                  loading="lazy"
-                />
-              </li>
-            ))}
+export function Platforms({ title = 'Get Your Book Published Across Leading Platforms', compact = false }: Props) {
+  // Steps one logo every 2s and loops, like the original Owl carousel
+  const { trackRef, trackStyle, onTransitionEnd, pauseProps } = useLoopCarousel(platforms.length)
+
+  return (
+    <section className={`${styles.platforms} ${compact ? styles.compact : ''}`} aria-labelledby="platforms-title">
+      <div className="container text-center">
+        <h2 id="platforms-title" className={`section-title ${styles.title}`} data-animate="fade">
+          {title}
+        </h2>
+
+        <div className={styles.viewport} {...pauseProps}>
+          {/* Second copy of the logos only makes the loop seamless; hidden from assistive tech */}
+          <ul ref={trackRef} className={styles.track} style={trackStyle} onTransitionEnd={onTransitionEnd}>
+            {[...platforms, ...platforms].map((p, i) => {
+              const clone = i >= platforms.length
+              return (
+                <li key={`${p.name}-${i}`} aria-hidden={clone || undefined}>
+                  <img src={p.src} alt={clone ? '' : p.name} width={p.width} height={p.height} loading="lazy" />
+                </li>
+              )
+            })}
           </ul>
-        ))}
+        </div>
       </div>
     </section>
   )
