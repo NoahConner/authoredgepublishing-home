@@ -23,12 +23,16 @@
   color: var(--white);
 }
 
-/* Light: white background, black text (Services page) */
-.light,
+/* Light sections use the same shared typography colors as the rest of the site. */
+.light {
+  color: var(--color-body);
+}
 .light .title,
-.light h3,
+.light h3 {
+  color: var(--color-heading);
+}
 .light .intro {
-  color: #000;
+  color: var(--color-body);
 }
 
 .tabs {

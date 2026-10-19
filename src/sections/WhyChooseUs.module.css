@@ -72,7 +72,7 @@
   font-family: var(--font-script);
   font-size: 50px;
   line-height: 60px;
-  color: #000;
+  color: var(--color-heading);
 }
 
 .intro {
@@ -87,7 +87,7 @@
 /* Answer text is #666 in this section */
 .accordion p {
   padding-bottom: 40px;
-  color: #666;
+  color: var(--color-body);
 }
 
 @media (max-width: 1280px) {

@@ -102,7 +102,7 @@ export function Services({
             <div>
               <div data-animate="fade">
                 <h3>{s.title}</h3>
-                <p>{s.body}</p>
+                <p style={{ color: '#fff' }}>{s.body}</p>
                 {s.points.length > 0 && (
                   <ul>
                     {s.points.map((p) => (

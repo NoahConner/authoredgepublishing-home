@@ -21,7 +21,7 @@ export function Hero() {
       <div className={`container ${styles.inner}`}>
         <div className={styles.copy}>
           <h1 id="hero-title" className="section-title">Professional Publishing Support for Authors Across the UK and Beyond</h1>
-          <p>
+          <p style={{ color: '#fff' }}>
             From manuscript review to editing, cover design, formatting, and publishing, we help you move forward
             with confidence while keeping full ownership and royalties.
           </p>

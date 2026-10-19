@@ -13,7 +13,7 @@
 /* Three 285px columns spread across the container */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 285px);
+  grid-template-columns: repeat(3, 350px);
   justify-content: space-between;
   margin: 99px 0 0;
   padding: 0 47px;
@@ -40,7 +40,7 @@
   align-items: center;
   gap: 15px;
   font-family: var(--font-ui);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 300;
   letter-spacing: 0.5px;
   color: var(--text);
@@ -49,8 +49,8 @@
 .avatar {
   display: grid;
   place-items: center;
-  width: 39px;
-  height: 39px;
+  width: 49px;
+  height: 49px;
   border-radius: 100px;
   background: var(--brown);
   color: var(--gold);

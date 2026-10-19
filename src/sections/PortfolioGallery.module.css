@@ -43,11 +43,11 @@
   margin-bottom: 8px;
   font-size: 22px;
   line-height: 32px;
-  color: #000;
+  color: var(--color-heading);
 }
 
 .book p {
-  color: #000;
+  color: var(--color-body);
 }
 
 .book strong {

@@ -41,6 +41,10 @@
   --footer-text: #b3b3b3;
   --divider: #d6dde6;
 
+  /* Shared typography palette used by every page and section. */
+  --color-heading: var(--heading);
+  --color-body: var(--text);
+
   /* Original uses -webkit-linear-gradient(162deg) = standard 288deg: dark on the left, gold on the right */
   --grad-gold: linear-gradient(288deg, #ffb800 0%, #2c2420 99%);
 
@@ -82,7 +86,7 @@ h4 {
   margin: 0 0 7px;
   font-family: var(--font-display);
   font-weight: 400;
-  color: var(--heading);
+  color: var(--color-heading);
   text-transform: capitalize;
 }
 
@@ -91,6 +95,7 @@ p {
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 30px;
+  color: var(--color-body);
 }
 
 ul,
@@ -137,12 +142,12 @@ textarea {
 /* Long-form copy (About page): black text with Open Sans semibold keyword highlights */
 .rich-text p {
   padding-bottom: 27px;
-  color: #000;
+  color: var(--color-body);
 }
 .rich-text strong {
   font-family: var(--font-ui);
   font-weight: 600;
-  color: #000;
+  color: var(--color-heading);
 }
 
 .visually-hidden {

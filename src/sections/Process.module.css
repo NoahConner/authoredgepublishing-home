@@ -10,6 +10,10 @@
   margin-top: 24px;
 }
 
+.steps {
+  line-height: 4rem;
+}
+
 .steps li::marker {
   color: var(--text);
   font-family: var(--font-ui);
@@ -29,11 +33,12 @@
   border-radius: 50px;
 }
 
-/* Title, intro and steps are pure black on the original */
 .process h2,
-.process header p,
 .steps h3 {
   color: #000;
+}
+.process header p {
+  color: var(--color-body);
 }
 
 @media (max-width: 999px) {

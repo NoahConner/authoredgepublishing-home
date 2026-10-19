@@ -13,7 +13,7 @@
 }
 
 .title {
-  color: #000;
+  color: var(--color-heading);
 }
 
 .ctas {

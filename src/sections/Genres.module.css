@@ -1,12 +1,12 @@
 .genres {
   padding: 120px 0;
-  color: #000;
+  color: var(--color-body);
   /* The carousel bleeds to the screen edge; clip it so the page never scrolls sideways */
   overflow-x: clip;
 }
 
 .title {
-  color: #000;
+  color: var(--color-heading);
 }
 
 .head {
@@ -17,7 +17,7 @@
 }
 
 .intro {
-  color: #000;
+  color: var(--color-body);
 }
 
 .arrows {
@@ -77,11 +77,11 @@
   margin-bottom: 8px;
   font-size: 27px;
   line-height: 37px;
-  color: #000;
+  color: var(--color-heading);
 }
 
 .card p {
-  color: #000;
+  color: var(--color-body);
 }
 
 @media (max-width: 999px) {

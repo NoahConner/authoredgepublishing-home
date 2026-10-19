@@ -65,7 +65,7 @@ export function WhyChooseUs() {
             <h2 id="why-title" className={styles.title}>
               Why Choose Us?
             </h2>
-            <p className={styles.intro}>
+            <p className={styles.intro} >
               Author Edge Publishing combines expertise, reliability, and personalised attention. Our self publishing
               company ensures every author receives professional support to publish their book confidently and
               efficiently.

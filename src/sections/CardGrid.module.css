@@ -11,9 +11,11 @@
   color: var(--white);
 }
 
-.light,
+.light {
+  color: var(--color-body);
+}
 .light .title {
-  color: #000;
+  color: var(--color-heading);
 }
 
 /* Small Coolvetica line above the title ("Got A Story?", "How IT Works") */

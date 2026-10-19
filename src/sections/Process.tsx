@@ -20,9 +20,9 @@ export function Process() {
         </header>
 
         <div className={styles.grid}>
-          <ol className={styles.steps}>
+          <ol className={styles.steps} >
             {processSteps.map((step) => (
-              <li key={step}>
+              <li key={step} style={{ color: '#000' }}>
                 <h3>{step}</h3>
               </li>
             ))}

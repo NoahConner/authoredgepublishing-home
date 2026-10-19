@@ -20,7 +20,7 @@ export function CtaBanner({ title, text, cta, ctaHref = '#consultation' }: Props
       <div className={`container ${styles.inner}`}>
         <div data-animate="fade">
           <h2 className="section-title">{title}</h2>
-          <p>{text}</p>
+          <p style={{ color: '#fff' }}>{text}</p>
         </div>
         <div className={styles.ctas}>
           <Button href={site.phone.href} variant="gold">

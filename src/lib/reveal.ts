@@ -8,9 +8,8 @@
 
 // Kept at module level: an IntersectionObserver with no JS reference can be
 // garbage-collected, which silently stops further reveals.
-let observer: IntersectionObserver | undefined
-
 export function initReveal() {
+  let observer: IntersectionObserver | undefined
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const elements = document.querySelectorAll<HTMLElement>('[data-animate]')
   // A [data-reveal-group] (e.g. a carousel) reveals all its animated children at
@@ -28,7 +27,7 @@ export function initReveal() {
 
   if (reduceMotion || !('IntersectionObserver' in window)) {
     elements.forEach(finish)
-    return
+    return () => undefined
   }
 
   const reveal = (el: HTMLElement) => {
@@ -59,4 +58,8 @@ export function initReveal() {
     if (!grouped(el)) observer!.observe(el)
   })
   groups.forEach((g) => observer!.observe(g))
+
+  // React StrictMode can mount effects twice in development. Disconnect this
+  // run's observer during cleanup so stale observers cannot act on the page.
+  return () => observer?.disconnect()
 }
