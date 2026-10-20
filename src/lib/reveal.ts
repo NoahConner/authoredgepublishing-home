@@ -11,6 +11,9 @@
 let observer: IntersectionObserver | undefined
 
 export function initReveal() {
+  // Safe to call twice (React StrictMode runs effects twice in development)
+  observer?.disconnect()
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const elements = document.querySelectorAll<HTMLElement>('[data-animate]')
   // A [data-reveal-group] (e.g. a carousel) reveals all its animated children at

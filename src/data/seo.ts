@@ -50,4 +50,12 @@ export const seo = {
     keywords:
       'contact Author Edge Publishing, book publishing company London, publishing consultation UK, free book publishing consultation, ghostwriting quote, book publishing quote UK, self publishing help UK',
   },
+  blog: {
+    title: 'Blog | Book Writing & Publishing Tips | Author Edge',
+    ogTitle: 'Author Edge Publishing Blog | Book Writing, Editing & Publishing Tips',
+    description:
+      'Expert guides on self publishing, book editing, e-book publishing and book marketing from the Author Edge Publishing team. Practical tips for UK authors.',
+    keywords:
+      'self publishing blog, book publishing tips, book editing tips, e-book editing, book marketing strategies, how to publish a book UK, manuscript preparation, self publishing guide, Author Edge Publishing blog',
+  },
 } satisfies Record<string, PageSeo>

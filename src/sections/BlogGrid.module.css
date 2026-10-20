@@ -1,0 +1,144 @@
+/* Measurements from the live /blog/ page (Salient post grid) */
+.blog {
+  padding: 25px 0 60px;
+}
+
+/* Three 400px cards, 50px apart */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  animation: fadeIn 0.6s ease both;
+}
+.item[hidden] {
+  display: none;
+}
+
+.imageLink {
+  display: block;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: none;
+}
+
+.imageLink img {
+  width: 100%;
+  aspect-ratio: 400 / 257;
+  object-fit: cover;
+}
+
+.title {
+  margin: 25px 0 0;
+  font-size: 27px;
+  line-height: 35.1px;
+  color: #000;
+}
+
+.excerpt {
+  max-width: 90%;
+  margin-top: 10px;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 25.6px;
+  color: #000;
+}
+
+.date {
+  display: block;
+  margin-top: 20px;
+  padding-bottom: 2px;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 17.6px;
+  color: #000;
+}
+
+/* Load More: white button with a light border; fades out once every post is shown */
+.loadMoreWrap {
+  margin-top: 86px;
+  text-align: center;
+  transition: opacity 0.4s ease;
+}
+.done {
+  opacity: 0;
+}
+
+.loadMore {
+  padding: 10px 40px;
+  border: 1px solid rgb(0 0 0 / 0.15);
+  border-radius: 4px;
+  background: var(--white);
+  color: #000;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 26px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.loadMore:hover {
+  border-color: #000;
+}
+.loadMore:disabled {
+  cursor: default;
+}
+
+/* "View" circle that follows the cursor over post images */
+.indicator {
+  position: fixed;
+  left: -47px;
+  top: -47px;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  background: #000;
+  color: var(--white);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  pointer-events: none;
+  opacity: 0;
+  scale: 0;
+  transition: opacity 0.25s ease, scale 0.25s ease;
+}
+.indicatorOn {
+  opacity: 1;
+  scale: 1;
+}
+
+@media (max-width: 999px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 30px;
+  }
+  .title {
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+
+@media (max-width: 690px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .loadMoreWrap {
+    margin-top: 50px;
+  }
+}
+
+/* Touch devices: keep the normal cursor and no follower */
+@media (hover: none) {
+  .imageLink {
+    cursor: pointer;
+  }
+  .indicator {
+    display: none;
+  }
+}

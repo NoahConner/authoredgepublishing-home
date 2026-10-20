@@ -59,6 +59,11 @@
   transform: scale(1, 0);
 }
 
+/* Answer fades in each time an item opens (keyframes in global.css) */
+.item[open] .body {
+  animation: fadeIn 0.6s ease both;
+}
+
 .body {
   margin: 0;
   padding: 0 0 41px;

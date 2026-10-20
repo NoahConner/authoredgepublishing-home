@@ -3,7 +3,6 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 import './styles/global.css'
 import App from './App.tsx'
 import { matchRoute } from './routes'
-import { initReveal } from './lib/reveal'
 
 const path = window.location.pathname
 const container = document.getElementById('root')!
@@ -22,6 +21,3 @@ if (container.hasChildNodes()) {
   document.title = matchRoute(path).seo.title
   createRoot(container).render(app)
 }
-
-// Start scroll-reveal animations once React has put the page on screen
-requestAnimationFrame(initReveal)

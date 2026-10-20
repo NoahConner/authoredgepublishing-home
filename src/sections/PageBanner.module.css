@@ -28,6 +28,11 @@
   color: var(--white);
 }
 
+/* No subtitle (Blog): no gap under the title, so the banner is 370px like the original */
+.titleOnly {
+  margin-bottom: 0;
+}
+
 /* The header sits on top of the banner, so keep room for it on small screens */
 @media (max-width: 999px) {
   .banner {
