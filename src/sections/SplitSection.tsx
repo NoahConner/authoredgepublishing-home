@@ -23,7 +23,7 @@ export function SplitSection({ id, title, titleStyle, image, imageSide, children
       <div className={`container ${styles.grid} ${imageSide === 'left' ? styles.imageLeft : ''}`}>
         <div className={`rich-text ${styles.text}`}>
           <div data-animate="fade">
-            <h2 id={id} className={`${titleClass} ${styles.title}`}>
+            <h2 id={id} className={`${titleClass} ${styles.title}`} style={{ color: '#000' }}> 
               {title}
             </h2>
             {children}

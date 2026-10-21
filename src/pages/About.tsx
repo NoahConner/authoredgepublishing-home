@@ -78,21 +78,21 @@ export function About() {
       >
         <p>
           At Author Edge Publishing, we believe every story deserves to be told and told the right way. As a trusted
-          provider of <strong>book publishing services</strong> in the United Kingdom, we help writers transform their
-          ideas into compelling, high-quality books. Whether you’re exploring <strong>self publishing services</strong>{' '}
-          or looking for a <strong>professional book publishing</strong> partner, our team is committed to making the
+          provider of <strong style={{ fontWeight: 600, color: '#000000' }}>book publishing services</strong> in the United Kingdom, we help writers transform their
+          ideas into compelling, high-quality books. Whether you’re exploring <strong style={{ fontWeight: 600, color: '#000000' }}>self publishing services</strong>{' '}
+          or looking for a <strong style={{ fontWeight: 600, color: '#000000' }}>professional book publishing</strong> partner, our team is committed to making the
           process simple, efficient, and results-driven. We guide you step-by-step so you can confidently{' '}
-          <strong>publish your book online</strong> and reach readers worldwide.
+          <strong style={{ fontWeight: 600, color: '#000000' }}>publish your book online</strong> and reach readers worldwide.
         </p>
         <p>
-          Our team includes experienced <strong>professional book writers</strong>, editors, and strategists who
-          specialise in <strong>custom book writing services</strong>, <strong>ghostwriting services</strong>, and{' '}
-          <strong>creative writing services</strong>. We also provide complete{' '}
-          <strong>E-book publishing services</strong>, including <strong>digital book publishing</strong>, formatting,
+          Our team includes experienced <strong style={{ fontWeight: 600, color: '#000000' }}>professional book writers</strong>, editors, and strategists who
+          specialise in <strong style={{ fontWeight: 600, color: '#000000' }}>custom book writing services</strong>, <strong style={{ fontWeight: 600, color: '#000000' }}>ghostwriting services</strong>, and{' '}
+          <strong style={{ fontWeight: 600, color: '#000000' }}>creative writing services</strong>. We also provide complete{' '}
+          <strong style={{ fontWeight: 600, color: '#000000' }}>E-book publishing services</strong>, including <strong style={{ fontWeight: 600, color: '#000<PASSWORD>' }}>digital book publishing</strong>, formatting,
           and distribution across major platforms. Beyond publishing, we offer powerful{' '}
-          <strong>book marketing services</strong> like <strong>book launch marketing</strong>,{' '}
-          <strong>online book promotion</strong>, and <strong>digital marketing for authors</strong>. As a leading{' '}
-          <strong>book publishing company</strong>, we focus on delivering value through quality, affordability, and
+          <strong style={{ fontWeight: 600, color: '#000000' }}>book marketing services</strong> like <strong style={{ fontWeight: 600, color: '#000000' }}>book launch marketing</strong>,{' '}
+          <strong style={{ fontWeight: 600, color: '#000000' }}>online book promotion</strong>, and <strong style={{ fontWeight: 600, color: '#000000' }}>digital marketing for authors</strong>. As a leading{' '}
+          <strong style={{ fontWeight: 600, color: '#000000' }}>book publishing company</strong>, we focus on delivering value through quality, affordability, and
           global exposure for every author we work with.
         </p>
       </SplitSection>
@@ -108,18 +108,18 @@ export function About() {
       <CenteredText id="empowers-title" title="Author Edge Publishing Empowers Authors With Results">
         <p>
           At Author Edge Publishing, we don’t just publish books; we build author success stories. Our approach
-          combines innovative <strong>online book publishing platform</strong> solutions with flexible{' '}
-          <strong>self publishing services</strong> to give you full control over your work. Whether you need to{' '}
-          <strong>hire a book writer</strong>, develop a manuscript through story writing services, or refine your idea
+          combines innovative <strong style={{ fontWeight: 600, color: '#000000' }}>online book publishing platform</strong> solutions with flexible{' '}
+          <strong style={{ fontWeight: 600, color: '#000000' }}>self publishing services</strong> to give you full control over your work. Whether you need to{' '}
+          <strong style={{ fontWeight: 600, color: '#000000' }}>hire a book writer</strong>, develop a manuscript through story writing services, or refine your idea
           with novel writing services, our team delivers tailored support at every stage.
         </p>
         <p>
-          We also specialise in <strong>E-book creation services</strong>, <strong>Kindle e-book publishing</strong>,
-          and <strong>E-book distribution services</strong>, making it easy to <strong>sell e-books online</strong> and
+          We also specialise in <strong style={{ fontWeight: 600, color: '#000000' }}>E-book creation services</strong>, <strong style={{ fontWeight: 600, color: '#000000' }}>Kindle e-book publishing</strong>,
+          and <strong style={{ fontWeight: 600, color: '#000000' }}>E-book distribution services</strong>, making it easy to <strong style={{ fontWeight: 600, color: '#000000' }}>sell e-books online</strong> and
           reach a global audience. Our marketing experts use proven book sales marketing strategies, book advertising
           services, and author marketing strategies to maximise visibility and engagement. From E-book formatting
           services to E-book conversion services, every detail is handled with precision. As a provider of{' '}
-          <strong>global book publishing services</strong>, we ensure your book stands out in a competitive marketplace
+          <strong style={{ fontWeight: 600, color: '#000000' }}>global book publishing services</strong>, we ensure your book stands out in a competitive marketplace
           and connects with the right audience.
         </p>
       </CenteredText>
@@ -140,18 +140,18 @@ export function About() {
       >
         <p>
           Author Edge Publishing stands apart by offering a complete, author-first experience designed for real
-          results. Our <strong>book writing services</strong> make it easy to <strong>hire a book writer</strong> or
-          collaborate with <strong>professional e-book writers</strong> who bring your vision to life. We focus on{' '}
-          <strong>high-quality e-book writing</strong> and <strong>content writing for e-books</strong>, ensuring your
+          results. Our <strong style={{ fontWeight: 600, color: '#000000' }}>book writing services</strong> make it easy to <strong style={{ fontWeight: 600, color: '#000000' }}>hire a book writer</strong> or
+          collaborate with <strong style={{ fontWeight: 600, color: '#000000' }}>professional e-book writers</strong> who bring your vision to life. We focus on{' '}
+          <strong style={{ fontWeight: 600, color: '#000000' }}>high-quality e-book writing</strong> and <strong style={{ fontWeight: 600, color: '#000000' }}>content writing for e-books</strong>, ensuring your
           content is engaging, polished, and ready for publication.
         </p>
         <p>
           What makes us different is our combination of strategy and execution. We leverage{' '}
-          <strong>online e-book platforms</strong>, advanced <strong>digital publishing solutions</strong>, and targeted{' '}
-          <strong>book marketing services</strong> to position your book for success. From{' '}
-          <strong>SEO e-book writing services</strong> to <strong>E-book content creation services</strong>, we focus
-          on visibility, discoverability, and reader engagement. Our expertise in <strong>online book promotion</strong>{' '}
-          helps you effectively <strong>promote your book online</strong> and build a strong author presence. With a
+          <strong style={{ fontWeight: 600, color: '#000000' }}>online e-book platforms</strong>, advanced <strong style={{ fontWeight: 600, color: '#000000' }}>digital publishing solutions</strong>, and targeted{' '}
+          <strong style={{ fontWeight: 600, color: '#000000' }}>book marketing services</strong> to position your book for success. From{' '}
+          <strong style={{ fontWeight: 600, color: '#000000' }}>SEO e-book writing services</strong> to <strong style={{ fontWeight: 600, color: '#000000' }}>E-book content creation services</strong>, we focus
+          on visibility, discoverability, and reader engagement. Our expertise in <strong style={{ fontWeight: 600, color: '#000000' }}>online book promotion</strong>{' '}
+          helps you effectively <strong style={{ fontWeight: 600, color: '#000000' }}>promote your book online</strong> and build a strong author presence. With a
           commitment to quality, transparency, and performance, we continue to help authors succeed in today’s
           competitive publishing world.
         </p>

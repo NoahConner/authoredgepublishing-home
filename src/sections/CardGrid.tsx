@@ -28,12 +28,12 @@ export function CardGrid({ id, eyebrow, title, intro, items, theme = 'dark' }: P
     <section className={`${styles.section} ${dark ? styles.dark : styles.light}`} aria-labelledby={id}>
       {dark && <ShapeDivider position="top" />}
       <div className="container text-center">
-        <div data-animate="fade">
+        <div data-animate="fade" >
           <p className={styles.eyebrow}>{eyebrow}</p>
-          <h2 id={id} className={`section-title ${styles.title}`}>
+          <h2 id={id} className={`section-title ${styles.title}`} style={{ color: '#000' }}>
             {title}
           </h2>
-          {intro && <p>{intro}</p>}
+          {intro && <p style={{ color: '#fff' }}>{intro}</p>}
         </div>
 
         <ul className={styles.cards}>

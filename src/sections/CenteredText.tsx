@@ -18,7 +18,7 @@ export function CenteredText({ id, eyebrow, title, children }: Props) {
       <div className="container text-center rich-text">
         <div data-animate="fade">
           {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
-          <h2 id={id} className={`section-title ${styles.title}`}>
+          <h2 id={id} className={`section-title ${styles.title}`} style={{ color: '#000' }}>
             {title}
           </h2>
           {children}

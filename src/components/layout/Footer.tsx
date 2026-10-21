@@ -44,7 +44,7 @@ export function Footer() {
             <img src={trustpilot} alt="Rated 5 stars on Trustpilot" width={147} height={70} loading="lazy" />
           </a>
 
-          <p className={styles.note}>You keep 100% ownership of your book and 100% of your royalties.</p>
+          <p className={styles.note} style={{ color: '#fff' }}>You keep 100% ownership of your book and 100% of your royalties.</p>
         </div>
 
         <div id="contact" className={styles.contactCol}>
@@ -52,9 +52,9 @@ export function Footer() {
           <ConsultationForm variant="footer" source="footer" />
         </div>
       </div>
-
       <div className={styles.bottom}>
         <p className="container">
+          <hr style={{ borderColor: '#444' }} />
           {site.legalName} Company Registration No {site.companyNumber} | Registered in England and Wales ©{' '}
           {year} {site.legalName}. All Rights Reserved
         </p>

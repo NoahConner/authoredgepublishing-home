@@ -24,6 +24,7 @@
   font-family: var(--font-display);
   font-size: 22px;
   line-height: 32px;
+  color: #fff;
 }
 
 /* Three 415px cards per row: 27px column gap, 24px row gap; heights follow content */

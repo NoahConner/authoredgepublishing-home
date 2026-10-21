@@ -13,7 +13,7 @@ export function PageBanner({ title, subtitle }: Props) {
         <h1 id="page-title" className={`section-title ${styles.title}`}>
           {title}
         </h1>
-        <p>{subtitle}</p>
+        <p style={{ color: '#fff' }}>{subtitle}</p>
       </div>
     </section>
   )

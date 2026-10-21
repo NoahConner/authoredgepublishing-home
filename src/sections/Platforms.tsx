@@ -15,7 +15,7 @@ export function Platforms({ title = 'Get Your Book Published Across Leading Plat
   return (
     <section className={`${styles.platforms} ${compact ? styles.compact : ''}`} aria-labelledby="platforms-title">
       <div className="container text-center">
-        <h2 id="platforms-title" className={`section-title ${styles.title}`} data-animate="fade">
+        <h2 id="platforms-title" className={`section-title ${styles.title}`} data-animate="fade" style={{ color: '#000' }}>
           {title}
         </h2>
 
