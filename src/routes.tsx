@@ -4,6 +4,7 @@ import { About } from './pages/About'
 import { Services } from './pages/Services'
 import { Portfolio } from './pages/Portfolio'
 import { Contact } from './pages/Contact'
+import { Blog } from './pages/Blog'
 import { seo, type PageSeo } from './data/seo'
 
 export type Route = {
@@ -20,6 +21,7 @@ export const routes: Route[] = [
   { path: '/about/', Page: About, seo: seo.about },
   { path: '/services/', Page: Services, seo: seo.services },
   { path: '/portfolio/', Page: Portfolio, seo: seo.portfolio },
+  { path: '/blog/', Page: Blog, seo: seo.blog },
   { path: '/contact/', Page: Contact, seo: seo.contact },
 ]
 
