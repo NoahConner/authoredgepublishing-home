@@ -26,6 +26,14 @@
   border-radius: 5px;
   cursor: none;
 }
+.imagePlaceholder {
+  display: block;
+  aspect-ratio: 400 / 257;
+  background: linear-gradient(135deg, #482c1e, #edab02);
+}
+.title a { text-decoration: none; }
+.title a:hover { color: var(--gold-deep); }
+.message { padding: 40px 0; text-align: center; }
 
 .imageLink img {
   width: 100%;
@@ -47,6 +55,10 @@
   font-size: 16px;
   line-height: 25.6px;
   color: #000;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .date {

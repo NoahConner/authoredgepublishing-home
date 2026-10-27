@@ -9,13 +9,7 @@
 // Kept at module level: an IntersectionObserver with no JS reference can be
 // garbage-collected, which silently stops further reveals.
 export function initReveal() {
-<<<<<<< HEAD
   let observer: IntersectionObserver | undefined
-=======
-  // Safe to call twice (React StrictMode runs effects twice in development)
-  observer?.disconnect()
-
->>>>>>> 82b90ae1ef7bbe33445defe5432e748231d71513
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const elements = document.querySelectorAll<HTMLElement>('[data-animate]')
   // A [data-reveal-group] (e.g. a carousel) reveals all its animated children at

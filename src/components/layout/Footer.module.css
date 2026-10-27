@@ -92,6 +92,13 @@
 .bottom {
   padding-block: 20px;
 }
+.divider {
+  width: calc(100% - 2 * var(--gutter));
+  max-width: calc(var(--container) - 2 * var(--gutter));
+  margin: 0 auto 16px;
+  border: 0;
+  border-top: 1px solid #444;
+}
 .bottom p {
   font-size: 15px;
   line-height: 25px;

@@ -62,7 +62,7 @@ export function Services({
 
       <div className="container">
         <header className="text-center" data-animate="fade">
-          <h2 id={`${idPrefix}-title`} className={`section-title ${styles.title}`} style={{ color: '#000000' }}>
+          <h2 id={`${idPrefix}-title`} className={`section-title ${styles.title}`} style={{ color: dark ? '#fff' : '#000' }}>
             {title}
           </h2>
           {intro && <p className={styles.intro}>{intro}</p>}
@@ -101,8 +101,8 @@ export function Services({
           >
             <div>
               <div data-animate="fade">
-                <h3 style={{ color: '#000' }}>{s.title}</h3>
-                <p style={{ color: '#000' }}>{s.body}</p>
+                <h3 style={{ color: dark ? '#fff' : '#000' }}>{s.title}</h3>
+                <p style={{ color: dark ? '#fff' : '#000' }}>{s.body}</p>
                 {s.points.length > 0 && (
                   <ul>
                     {s.points.map((p) => (

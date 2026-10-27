@@ -29,8 +29,8 @@ export function CardGrid({ id, eyebrow, title, intro, items, theme = 'dark' }: P
       {dark && <ShapeDivider position="top" />}
       <div className="container text-center">
         <div data-animate="fade" >
-          <p className={styles.eyebrow}>{eyebrow}</p>
-          <h2 id={id} className={`section-title ${styles.title}`} style={{ color: '#000' }}>
+          <p className={styles.eyebrow} style={{ color: '#000' }}>{eyebrow}</p>
+          <h2 id={id} className={`section-title ${styles.title}`} >
             {title}
           </h2>
           {intro && <p style={{ color: '#fff' }}>{intro}</p>}

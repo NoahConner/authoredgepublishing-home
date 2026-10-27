@@ -4,7 +4,10 @@ import './styles/global.css'
 import App from './App.tsx'
 import { matchRoute } from './routes'
 
-const path = window.location.pathname
+const base = import.meta.env.BASE_URL
+const path = window.location.pathname.startsWith(base)
+  ? `/${window.location.pathname.slice(base.length)}`
+  : window.location.pathname
 const container = document.getElementById('root')!
 const app = (
   <StrictMode>

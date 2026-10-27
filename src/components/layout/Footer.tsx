@@ -1,6 +1,7 @@
 import { site, socialLinks } from '../../data/site'
 import { ConsultationForm } from '../ui/ConsultationForm'
 import { Icon } from '../ui/Icon'
+import { sitePath } from '../../lib/paths'
 import logo from '../../assets/images/logo.png'
 import trustpilot from '../../assets/images/trustpilot.webp'
 import styles from './Footer.module.css'
@@ -12,7 +13,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div>
-          <a href="/" aria-label={`${site.name} — home`} className={styles.logo}>
+          <a href={sitePath('/')} aria-label={`${site.name} — home`} className={styles.logo}>
             <img src={logo} alt={site.name} width={205} height={73} loading="lazy" />
           </a>
 
@@ -53,8 +54,8 @@ export function Footer() {
         </div>
       </div>
       <div className={styles.bottom}>
+        <hr className={styles.divider} />
         <p className="container">
-          <hr style={{ borderColor: '#444' }} />
           {site.legalName} Company Registration No {site.companyNumber} | Registered in England and Wales ©{' '}
           {year} {site.legalName}. All Rights Reserved
         </p>

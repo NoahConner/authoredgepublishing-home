@@ -9,7 +9,9 @@ export type PageSeo = {
   ogTitle?: string
 }
 
-export const seo = {
+import { pageMeta } from './pageMeta'
+
+const seoDetails = {
   home: {
     title: 'Self Publishing & Book Publishing Services UK | Author Edge',
     ogTitle: 'Self Publishing & Book Publishing Services UK | Author Edge Publishing',
@@ -58,4 +60,15 @@ export const seo = {
     keywords:
       'self publishing blog, book publishing tips, book editing tips, e-book editing, book marketing strategies, how to publish a book UK, manuscript preparation, self publishing guide, Author Edge Publishing blog',
   },
+} satisfies Record<string, PageSeo>
+
+// Keep titles and descriptions editable together in pageMeta.ts; this file
+// retains social titles and keywords used by structured data and SEO tags.
+export const seo = {
+  home: { ...seoDetails.home, ...pageMeta.home },
+  about: { ...seoDetails.about, ...pageMeta.about },
+  services: { ...seoDetails.services, ...pageMeta.services },
+  portfolio: { ...seoDetails.portfolio, ...pageMeta.portfolio },
+  contact: { ...seoDetails.contact, ...pageMeta.contact },
+  blog: { ...seoDetails.blog, ...pageMeta.blog },
 } satisfies Record<string, PageSeo>

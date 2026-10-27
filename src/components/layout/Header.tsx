@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { navLinks, site } from '../../data/site'
 import { Button } from '../ui/Button'
 import { Icon } from '../ui/Icon'
+import { sitePath } from '../../lib/paths'
 import logo from '../../assets/images/logo.png'
 import styles from './Header.module.css'
 
@@ -30,7 +31,7 @@ export function Header({ currentPath = '/' }: Props) {
   return (
     <header className={`${styles.header} ${menuOpen ? styles.menuOpen : ''}`}>
       <div className={`container ${styles.inner}`}>
-        <a href="/" className={styles.logo} aria-label={`${site.name} — home`}>
+        <a href={sitePath('/')} className={styles.logo} aria-label={`${site.name} — home`}>
           <img src={logo} alt={site.name} width={205} height={73} fetchPriority="high" />
         </a>
 
@@ -39,7 +40,7 @@ export function Header({ currentPath = '/' }: Props) {
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
-                  href={link.href}
+                  href={sitePath(link.href)}
                   aria-current={link.href === currentPath ? 'page' : undefined}
                   onClick={closeMenu}
                 >

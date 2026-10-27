@@ -5,6 +5,7 @@ import { Services } from './pages/Services'
 import { Portfolio } from './pages/Portfolio'
 import { Contact } from './pages/Contact'
 import { Blog } from './pages/Blog'
+import { BlogPost } from './pages/BlogPost'
 import { seo, type PageSeo } from './data/seo'
 
 export type Route = {
@@ -28,5 +29,13 @@ export const routes: Route[] = [
 /** "/about" and "/about/" both match the About route; unknown paths fall back to Home. */
 export function matchRoute(pathname: string): Route {
   const path = pathname.endsWith('/') ? pathname : `${pathname}/`
-  return routes.find((r) => r.path === path) ?? routes[0]
+  const route = routes.find((r) => r.path === path)
+  if (route) return route
+  const segments = path.split('/').filter(Boolean)
+  if (segments.length === 2 && segments[0] === 'blog') {
+    let slug = segments[1]
+    try { slug = decodeURIComponent(slug) } catch { /* use the raw segment */ }
+    return { path, Page: () => <BlogPost slug={slug} />, seo: seo.blog }
+  }
+  return routes[0]
 }

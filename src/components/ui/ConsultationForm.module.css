@@ -66,12 +66,65 @@
   cursor: wait;
 }
 
-.success,
 .error {
   margin: 12px 0 0;
   font-family: var(--font-ui);
   font-size: 14px;
   line-height: 22px;
+  color: #b42318;
+}
+
+.fieldError {
+  margin: 5px 4px 0;
+  color: #b42318;
+  font: 600 12px/1.45 var(--font-ui);
+}
+
+.form input[aria-invalid='true'],
+.form select[aria-invalid='true'],
+.form textarea[aria-invalid='true'] {
+  border: 2px solid #d92d20;
+  box-shadow: 0 0 0 2px rgb(217 45 32 / 12%);
+}
+
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(440px, calc(100vw - 32px));
+  padding: 16px 18px;
+  border: 1px solid #a6f4c5;
+  border-radius: 10px;
+  background: #ecfdf3;
+  box-shadow: 0 12px 36px rgb(0 0 0 / 18%);
+  color: #05603a;
+  font: 600 14px/1.5 var(--font-ui);
+}
+
+.toastIcon {
+  display: grid;
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  background: #12b76a;
+  color: #fff;
+}
+
+.toastClose {
+  margin-left: auto;
+  padding: 0 4px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
 }
 
 /* ---------- Hero: translucent black card ---------- */
@@ -104,6 +157,7 @@
 .dark .error {
   color: #ffc9c0;
 }
+.dark .fieldError { color: #ffc9c0; }
 
 /* ---------- Process section: gold card ---------- */
 .gold {

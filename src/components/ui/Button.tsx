@@ -1,5 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react'
 import { Icon } from './Icon'
+import { ScrollLink } from './ScrollLink'
 import styles from './Button.module.css'
 
 /**
@@ -18,10 +19,27 @@ type Props = ComponentPropsWithoutRef<'a'> & {
 }
 
 /** Pill-shaped link button with the trailing arrow used across the site. */
-export function Button({ variant = 'grad', animate = true, className, children, ...rest }: Props) {
+export function Button({ variant = 'grad', animate = true, className, children, href, ...rest }: Props) {
+  const buttonClass = [styles.btn, styles[variant], className].filter(Boolean).join(' ')
+  if (href?.startsWith('#')) {
+    return (
+      <ScrollLink
+        to={href.slice(1)}
+        href={href}
+        className={buttonClass}
+        data-animate={animate ? 'bounce' : undefined}
+        {...rest}
+      >
+        <span>{children}</span>
+        <Icon name="longArrow" size={20} className={styles.arrow} />
+      </ScrollLink>
+    )
+  }
+
   return (
     <a
-      className={[styles.btn, styles[variant], className].filter(Boolean).join(' ')}
+      href={href}
+      className={buttonClass}
       data-animate={animate ? 'bounce' : undefined}
       {...rest}
     >

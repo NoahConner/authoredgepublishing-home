@@ -1,13 +1,10 @@
 import { Layout } from '../components/layout/Layout'
 import { PageBanner } from '../sections/PageBanner'
 import { BlogGrid } from '../sections/BlogGrid'
-import { posts } from '../data/blog'
 import { site } from '../data/site'
 import { seo } from '../data/seo'
 
 const pageUrl = `${site.url}/blog/`
-
-// Structured data: the blog with every post listed, plus breadcrumbs.
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -19,14 +16,6 @@ const structuredData = {
       description: seo.blog.description,
       inLanguage: 'en-GB',
       publisher: { '@id': `${site.url}/#organization` },
-      blogPost: posts.map((p) => ({
-        '@type': 'BlogPosting',
-        headline: p.title,
-        datePublished: p.date,
-        image: new URL(p.image, site.url).href,
-        description: p.excerpt.replace(/[.…]+$/, ''),
-        publisher: { '@id': `${site.url}/#organization` },
-      })),
     },
     {
       '@type': 'BreadcrumbList',
@@ -44,10 +33,7 @@ export function Blog() {
     <Layout currentPath="/blog/">
       <PageBanner title="Blogs" />
       <BlogGrid />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     </Layout>
   )
 }
