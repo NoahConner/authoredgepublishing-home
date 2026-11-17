@@ -8,7 +8,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const dist = path.join(root, 'dist')
 const serverEntry = path.join(root, 'dist-ssr/entry-server.js')
 
-const { render, routes, site } = await import(pathToFileURL(serverEntry).href)
+const { render, routes, site, posts } = await import(pathToFileURL(serverEntry).href)
 const template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8')
 
 for (const placeholder of ['<!--app-head-->', '<!--app-html-->']) {
@@ -38,7 +38,16 @@ function headTags(route) {
   ].join('\n    ')
 }
 
-for (const route of routes) {
+const blogRoutes = posts.map((post) => ({
+  path: `/blog/${post.slug}/`,
+  seo: {
+    title: post.title,
+    description: post.excerpt.replace(/(?:â€¦|\.\.\.)$/, ''),
+    keywords: 'book publishing, authors, self publishing',
+  },
+}))
+
+for (const route of [...routes, ...blogRoutes]) {
   const html = template
     .replace('<!--app-head-->', headTags(route))
     .replace('<!--app-html-->', await render(route.path))
@@ -48,5 +57,14 @@ for (const route of routes) {
   fs.writeFileSync(path.join(outDir, 'index.html'), html)
   console.log(`Prerendered ${route.path} → ${path.relative(root, path.join(outDir, 'index.html'))}`)
 }
+
+const xml = (value) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+const sitemap = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...[...routes, ...blogRoutes].map(({ path: routePath }) => `  <url><loc>${xml(`${site.url}${routePath}`)}</loc></url>`),
+  '</urlset>',
+].join('\n') + '\n'
+fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap)
 
 fs.rmSync(path.join(root, 'dist-ssr'), { recursive: true, force: true })

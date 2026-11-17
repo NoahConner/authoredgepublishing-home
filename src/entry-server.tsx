@@ -3,8 +3,9 @@ import { prerender } from 'react-dom/static'
 import App from './App.tsx'
 import { routes } from './routes'
 import { site } from './data/site'
+import { posts } from './data/blog'
 
-export { routes, site }
+export { routes, site, posts }
 
 /** Renders one page to static HTML at build time (see scripts/prerender.mjs). */
 export async function render(path: string): Promise<string> {

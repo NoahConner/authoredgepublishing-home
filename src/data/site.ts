@@ -6,7 +6,7 @@ export const site = {
   url: 'https://authoredgepublishing.co.uk',
   companyNumber: '17413238',
   phone: {
-    display: '+44 7490918389',
+    display: '+44 7441 915625',
     href: 'tel:+447490918389',
   },
   email: 'Info@authoredgepublishing.co.uk',

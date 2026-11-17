@@ -48,7 +48,7 @@ const seoDetails = {
     title: 'Contact Us | Author Edge Publishing | London, UK',
     ogTitle: 'Contact Author Edge Publishing | Book Publishing Help, London UK',
     description:
-      'Contact Author Edge Publishing in London for book publishing, ghostwriting & marketing support. Call +44 7490918389 or request your free consultation today.',
+      'Contact Author Edge Publishing in London for book publishing, ghostwriting & marketing support. Call +44 7441 915625 or request your free consultation today.',
     keywords:
       'contact Author Edge Publishing, book publishing company London, publishing consultation UK, free book publishing consultation, ghostwriting quote, book publishing quote UK, self publishing help UK',
   },

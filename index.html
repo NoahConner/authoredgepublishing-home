@@ -1,43 +1,55 @@
 <!doctype html>
 <html lang="en-GB">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Lets CSS hide not-yet-animated content only when JS will reveal it
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="JuwEGBTjjf6_EZr-RWknf12LHhJ23HJuEwVcyLKMc9M" />
+  <!-- Lets CSS hide not-yet-animated content only when JS will reveal it
          (crawlers and no-JS visitors always see everything) -->
-    <script>document.documentElement.classList.add('js')</script>
+  <script>document.documentElement.classList.add('js')</script>
 
-    <!-- Page-specific SEO (title, description, keywords, canonical, social titles)
+  <!-- Page-specific SEO (title, description, keywords, canonical, social titles)
          is injected here per page by scripts/prerender.mjs from src/data/seo.ts -->
-    <!--app-head-->
+  <!--app-head-->
 
-    <!-- Shared SEO -->
-    <meta name="author" content="Author Edge Publishing" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="geo.region" content="GB-LND" />
-    <meta name="geo.placename" content="London" />
-    <meta name="theme-color" content="#2c2420" />
-    <meta name="format-detection" content="telephone=yes" />
+  <!-- Shared SEO -->
+  <meta name="author" content="Author Edge Publishing" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="geo.region" content="GB-LND" />
+  <meta name="geo.placename" content="London" />
+  <meta name="theme-color" content="#2c2420" />
+  <meta name="format-detection" content="telephone=yes" />
 
-    <!-- Open Graph / Twitter (shared parts) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_GB" />
-    <meta property="og:site_name" content="Author Edge Publishing" />
-    <meta property="og:image" content="https://authoredgepublishing.co.uk/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Author Edge Publishing — self publishing services for authors in the UK" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://authoredgepublishing.co.uk/og-image.jpg" />
-    <meta name="twitter:image:alt" content="Author Edge Publishing — self publishing services for authors in the UK" />
+  <!-- Open Graph / Twitter (shared parts) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Author Edge Publishing" />
+  <meta property="og:image" content="https://authoredgepublishing.co.uk/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Author Edge Publishing — self publishing services for authors in the UK" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://authoredgepublishing.co.uk/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Author Edge Publishing — self publishing services for authors in the UK" />
 
-    <!-- Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="%BASE_URL%favicon-192.png" />
-    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
-  </head>
-  <body>
-    <div id="root"><!--app-html--></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="%BASE_URL%favicon-192.png" />
+  <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+</head>
+
+<body>
+  <div id="root"><!--app-html--></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK5N7JY8BW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YK5N7JY8BW');
+  </script>
+</body>
+
 </html>
